@@ -1,0 +1,31 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main {
+    public static void main(String[] args) throws IOException{
+        Scanner in = new Scanner(System.in);
+        int N = in.nextInt();
+        int ctn = 0;
+
+        if(N < 3 || N > 5000){
+            System.out.println(-1);
+            return;
+        }
+
+        while(true){
+            if(N % 5 == 0){
+                ctn += N / 5;
+                System.out.println(ctn);
+                return;
+            }
+            N -= 3;
+            ctn++;
+
+            if(N < 0){
+                System.out.println(-1);
+                return;
+            }
+        }
+    }
+}
