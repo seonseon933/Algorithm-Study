@@ -1,0 +1,42 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// The main method must be in a class named "Main".
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u');
+        int vowels_ctn;
+        int consonants_ctn;
+        int num = sc.nextInt();
+        sc.nextLine();
+
+        String[] names = new String[num];
+
+        for(int i = 0; i < num; i++){
+            names[i] = sc.nextLine();
+        }
+
+        for(int i = 0; i < num; i++){
+            vowels_ctn = 0;
+            consonants_ctn = 0;
+            System.out.println(names[i]);
+            
+            for(int j = 0; j < names[i].length(); j++){
+                if(vowels.contains(names[i].charAt(j))){
+                    vowels_ctn++;
+                }else{
+                    consonants_ctn++;
+                }
+            }
+
+            if(vowels_ctn > consonants_ctn){
+                System.out.println(1);
+            }
+            else{
+                System.out.println(0);
+            }
+        }
+    }
+}
