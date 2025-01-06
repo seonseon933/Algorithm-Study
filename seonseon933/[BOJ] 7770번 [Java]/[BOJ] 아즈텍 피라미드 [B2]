@@ -1,0 +1,24 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// The main method must be in a class named "Main".
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int height = 1;
+        int num  = sc.nextInt();
+        int newBlock = 1;
+        int Block = 1;
+        while(true){
+            newBlock += 4 * height;
+            Block += newBlock;
+            if(Block > num){
+                break;
+            }
+            height++;
+        }
+        System.out.println(height);
+        
+    }
+}
