@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.HashMap;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int max = 0;
+
+        HashMap<Integer, Integer> brandctn = new HashMap<>();
+
+        for(int i = 0; i < n; i++){
+            int x = sc.nextInt();
+            brandctn.put(x, brandctn.getOrDefault(x, 0) + 1);
+        }
+
+        for(int ctn : brandctn.values()){
+            if(ctn > max){
+                max = ctn;
+            }
+        }
+        
+        System.out.println(max);
+    }
+}
